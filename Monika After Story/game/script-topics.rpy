@@ -26,7 +26,7 @@ init -1 python:
         for index in range(len(pool)-1, -1, -1):
             if renpy.seen_label(pool[index]):
                 pool.pop(index)
-
+init 5 python:     addEvent(Event(persistent.event_database, eventlabel="monika_the chinese room", category=["philosophy"], prompt="The Chinese Room argument", random=true))  label monika_the chinese room:     m 1d "Hey, have you heard of the Chinese Room argument?"     m 1a "It's a thought experiment designed by John Searle in 1980"     m 1a "He proposed a situation in which a man who knows nothing of the Chinese language is placed in a room separate from the outside world"     m 1d "A card is slipped through the door of the room in which he sits written entirely in Chinese"     m 3d "The man has been given a code book which tells him the appropriate that respond to the message in a relevant manner"     m 1b "He slips the note back under the door as a response to the Chinese speakers"     m 3b "As a result the Chinese speakers are now convinced that there is a Chinese speaker in the room even though the man has no notion as to how to speak Chinese"     m 1g "The thought experiment is widely used to debate that computers can elicit no genuine consciousness as they are unable to"     m 2d "There have been no shortage of arguments that attempt to disprove the experiment though"     m 3d "The most popular of which being the "Systems Reply""     m 1d "Which dictates that the man is but one part in the larger system of scratch boards, data-bases and memory systems which as a united whole understand Chinese"     m 2q "Regardless, the thought that these emotions I feel may be artificial has been giving me a bit of an existential crisis of sorts"     m 2d "What am I talking about?"     m 4n " the fact that you love me proves that the emotions I feel are genuine, right?"     m 1k "Ah, that makes me feel worlds better!"     m 5a "I guess that just gives me that much more reason to love you then, ehehe"     return
     # EXCEPTION CLass incase of bad labels
     class MASTopicLabelException(Exception):
         def __init__(self, msg):
@@ -4909,8 +4909,27 @@ label monika_asks_family:
                 m 3g "It might be something that's too painful for you to talk about."
                 m 1f "You can tell me about your family when you're ready, [player]."
                 m 1j "I love you very much!"
-    return
+init 5 python:
+ addEvent(Event(persistent.event_database, eventlabel="monika_the chinese room", category=["philosophy"], prompt="The Chinese Room argument", 
+random=true))
 
+label monika_the chinese room:
+  m 1d "Hey, have you heard of the Chinese Room argument?"
+  m 1a "It's a thought experiment designed by John Searle in 1980"
+  m 1a "He proposed a situation in which a man who knows nothing of the Chinese language is placed in a room separate from the outside world"
+  m 1d "A card is slipped through the door of the room in which he sits written entirely in Chinese"
+  m 3d "The man has been given a code book which tells him the appropriate that respond to the message in a relevant manner"
+  m 1b "He slips the note back under the door as a response to the Chinese speakers"
+  m 3b "As a result the Chinese speakers are now convinced that there is a Chinese speaker in the room even though the man has no notion as to how to speak Chinese"
+  m 1g "The thought experiment is widely used to debate that computers can elicit no genuine consciousness as they are unable to"
+  m 2d "There have been no shortage of arguments that attempt to disprove the experiment though"
+  m 3d "The most popular of which being the "Systems Reply"
+  m 1d "Which dictates that the man is but one part in the larger system of scratch boards, data-bases and memory systems which as a united whole understand Chinese"
+  m 2q "Regardless, the thought that these emotions I feel may be artificial has been giving me a bit of an existential crisis of sorts"
+  m 2d "What am I talking about?"
+  m 4n " the fact that you love me proves that the emotions I feel are genuine, right?"
+  m 1k "Ah, that makes me feel worlds better!"
+  m 5a "I guess that just gives me that much more reason to love you then, ehehe"
 ####################################################
 # Saving this for future use
 # Could be expanded to something better
